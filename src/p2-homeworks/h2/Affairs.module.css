@@ -1,3 +1,32 @@
-.someClass {
+.affairs {
+    padding: 10px 0 10px 10px;
+}
 
+.affairs__btn {
+    padding: 0 10px;
+    margin-right: 5px;
+}
+
+.affair__name {
+    margin-right: 1em;
+}
+
+.affair__priority {
+    margin-right: 1em;
+}
+
+.affair__btn {
+    margin: 0;
+}
+
+.high {
+    color: red;
+}
+
+.middle {
+    color: yellow;
+}
+
+.low {
+    color: green;
 }
