@@ -1,22 +1,58 @@
+ /* affairs */
 .affairs {
-    padding: 10px 0 10px 10px;
+    padding: 0.5em;
+    margin: 0.5em;
+    font-size: 16px;
+    border: 2px solid #e7e7e7;
+    min-width: 305px;
+    max-width: 400px;
 }
 
 .affairs__btn {
-    padding: 0 10px;
-    margin-right: 5px;
+    padding: 10px 20px;
+    margin: 5px 5px 0 0;
+    border: 2px solid #e7e7e7;
+    background-color: #fff;
+    color: black;
+    text-decoration: none;
+
+    transition-duration: 0.3s;
+}
+
+.affairs__btn:hover {
+    background-color: #e7e7e7;
+}
+
+ /* affair */
+.affair {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 5px;
 }
 
 .affair__name {
-    margin-right: 1em;
+    width: 100px;
 }
 
 .affair__priority {
-    margin-right: 1em;
+    width: 100px;
 }
 
 .affair__btn {
     margin: 0;
+    padding: 0 0.5em;
+
+    border: 2px solid #e7e7e7;
+    background-color: #fff;
+    color: black;
+    text-decoration: none;
+
+    transition-duration: 0.3s;
+}
+
+.affair__btn:hover {
+    background-color: #e7e7e7;
 }
 
 .high {
@@ -24,7 +60,7 @@
 }
 
 .middle {
-    color: yellow;
+    color: rgb(86, 66, 197);
 }
 
 .low {
