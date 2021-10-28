@@ -18,28 +18,17 @@ function Affairs(props: AffairsPropsType) {
         />
     ))
 
-    const setAll = () => {
-        props.setFilter("all")
-    }
-    const setHigh = () => {
-        props.setFilter("high")
-    }
-    const setMiddle = () => {
-        props.setFilter("middle")
-    }
-    const setLow = () => {
-        props.setFilter("low")
+    const setPriorityHandler = (value: FilterType) => {
+        props.setFilter(value)
     }
 
     return (
         <div className={s.affairs}>
-
             {mappedAffairs}
-
-            <button className={s.affairs__btn} onClick={setAll}>All</button>
-            <button className={s.affairs__btn} onClick={setHigh}>High</button>
-            <button className={s.affairs__btn} onClick={setMiddle}>Middle</button>
-            <button className={s.affairs__btn} onClick={setLow}>Low</button>
+            <button className={s.affairs__btn} onClick={() => {setPriorityHandler('all')}}>All</button>
+            <button className={s.affairs__btn} onClick={() => {setPriorityHandler('high')}}>High</button>
+            <button className={s.affairs__btn} onClick={() => {setPriorityHandler('middle')}}>Middle</button>
+            <button className={s.affairs__btn} onClick={() => {setPriorityHandler('low')}}>Low</button>
         </div>
     )
 }
