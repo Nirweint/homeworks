@@ -27,13 +27,13 @@ const GreetingContainer: React.FC<GreetingContainerPropsType> = ({users, addUser
         }
     }
     const addUser = () => {
-        if (name === "") {
+        if (name) {
+            alert(`Hello ${name}!`)
+            addUserCallback(name)
+            setName('')
+        } else {
             setError('name is require')
-            return;
         }
-        alert(`Hello ${name}!`)
-        addUserCallback(name)
-        setName('')
     }
     const addUserOnEnter = (e: KeyboardEvent<HTMLInputElement>) => {
         if (e.key === 'Enter' && name) {
