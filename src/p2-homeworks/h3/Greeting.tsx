@@ -17,6 +17,8 @@ const Greeting: React.FC<GreetingPropsType> = (
     {name, setNameCallback, addUser, addUserOnEnter, error, totalUsers} // деструктуризация пропсов
 ) => {
 
+    const isDisabled = error ? true : false
+
     return (
         <div className={s.greeting}>
             <div className={s.inputWrapper}>
@@ -26,7 +28,7 @@ const Greeting: React.FC<GreetingPropsType> = (
                     onChange={setNameCallback}
                     onKeyPress={addUserOnEnter}
                 />
-                <SuperButton className={s.btn} onClick={addUser}>add</SuperButton>
+                <SuperButton className={s.btn} onClick={addUser} disabled={isDisabled}>add</SuperButton>
                 <span>{totalUsers}</span>
             </div>
         </div>

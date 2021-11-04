@@ -2,11 +2,13 @@ import React from 'react'
 import Affair from './Affair'
 import {AffairType, FilterType} from './HW2'
 import s from './Affairs.module.css'
+import SuperButton from "../h4/common/c2-SuperButton/SuperButton";
 
 type AffairsPropsType = {
     data: Array<AffairType>
     setFilter: (value: FilterType) => void
     deleteAffairCallback: (_id: number) => void
+    filter: FilterType
 }
 
 function Affairs(props: AffairsPropsType) {
@@ -17,18 +19,30 @@ function Affairs(props: AffairsPropsType) {
             deleteAffairCallback={props.deleteAffairCallback}
         />
     ))
-
     const setPriorityHandler = (value: FilterType) => {
         props.setFilter(value)
+    }
+    const activePriorityBtnStyle = (el: FilterType) => {
+        return props.filter === el ? `${s.active} ${s.affairs__btn}` : `${s.affairs__btn}`;
     }
 
     return (
         <div className={s.affairs}>
             {mappedAffairs}
-            <button className={s.affairs__btn} onClick={() => {setPriorityHandler('all')}}>All</button>
-            <button className={s.affairs__btn} onClick={() => {setPriorityHandler('high')}}>High</button>
-            <button className={s.affairs__btn} onClick={() => {setPriorityHandler('middle')}}>Middle</button>
-            <button className={s.affairs__btn} onClick={() => {setPriorityHandler('low')}}>Low</button>
+            <div className={s.affairs__buttons}>
+                <SuperButton className={activePriorityBtnStyle("all")} onClick={() => {
+                    setPriorityHandler('all')
+                }}>All</SuperButton>
+                <SuperButton className={activePriorityBtnStyle("high")} onClick={() => {
+                    setPriorityHandler('high')
+                }}>High</SuperButton>
+                <SuperButton className={activePriorityBtnStyle("middle")} onClick={() => {
+                    setPriorityHandler('middle')
+                }}>Middle</SuperButton>
+                <SuperButton className={activePriorityBtnStyle("low")} onClick={() => {
+                    setPriorityHandler('low')
+                }}>Low</SuperButton>
+            </div>
         </div>
     )
 }
