@@ -6,16 +6,16 @@ import {JuniorPlus} from "./pages/JuniorPlus";
 import {Error404} from "./pages/Error404";
 
 export const PATH = {
-    PRE_JUNIOR: 'pre-junior',
-    JUNIOR: 'junior',
-    JUNIOR_PLUS: 'junior-plus',
+    PRE_JUNIOR: '/pre-junior',
+    JUNIOR: '/junior',
+    JUNIOR_PLUS: '/junior-plus',
 }
 
 export function RoutesComponent() {
     return (
         <div>
             <Routes>
-                <Route index element={ <Navigate replace to="/pre-junior" />}/>
+                <Route index element={ <Navigate replace to={PATH.PRE_JUNIOR} />}/>
                 <Route path={PATH.PRE_JUNIOR} element={<PreJunior/>}/>
                 <Route path={PATH.JUNIOR} element={<Junior/>}/>
                 <Route path={PATH.JUNIOR_PLUS} element={<JuniorPlus/>}/>
