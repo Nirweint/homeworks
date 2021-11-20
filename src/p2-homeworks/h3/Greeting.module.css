@@ -1,18 +1,6 @@
-.greeting {
-    margin: 0.5em 0 0 0.5em;
-}
-
 .inputWrapper {
     display: flex;
     align-items: center;
-}
-.input {
-    margin-right: 10px;
-}
-
-
-.input:focus {
-    outline: none;
 }
 
 .btn {

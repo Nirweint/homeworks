@@ -20,7 +20,7 @@ const Greeting: React.FC<GreetingPropsType> = (
     const isDisabled = error ? true : false
 
     return (
-        <div className={s.greeting}>
+        <div>
             <div className={s.inputWrapper}>
                 <SuperInputText
                     error={error}
