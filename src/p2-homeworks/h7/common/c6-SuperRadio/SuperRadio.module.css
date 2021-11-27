@@ -1,0 +1,25 @@
+.radioWrapper {
+    display: flex;
+}
+
+.label {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+.radio {
+    appearance: none;
+    cursor: pointer;
+
+    border: 1px solid #e7e7e7;
+    border-radius: 5px;
+
+    width: 20px;
+    height: 20px;
+}
+
+.radio:checked {
+    appearance: none;
+    background: url("check.png") center/15px no-repeat;
+}
