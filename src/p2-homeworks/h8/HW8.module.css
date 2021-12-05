@@ -1,0 +1,13 @@
+.people {
+    margin-left: 10px;
+}
+
+.item {
+    display: flex;
+    justify-content: space-between;
+    max-width: 300px;
+}
+
+.btn {
+    margin-left: 0;
+}
