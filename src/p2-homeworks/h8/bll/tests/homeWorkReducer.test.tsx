@@ -1,5 +1,6 @@
 import React from 'react'
 import {checkAgeAC, homeWorkReducer, sortAC} from '../homeWorkReducer'
+
 import {UserType} from "../../HW8";
 
 let initialState: UserType[] // need to fix any
