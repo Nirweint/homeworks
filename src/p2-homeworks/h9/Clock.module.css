@@ -1,0 +1,15 @@
+.clock {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin-left: 10px;
+    height: 100px;
+}
+
+.date {
+    height: 20px;
+}
+
+.btn {
+    margin-left: 0;
+}

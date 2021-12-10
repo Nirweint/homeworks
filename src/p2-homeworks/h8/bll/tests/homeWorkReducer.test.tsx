@@ -1,6 +1,5 @@
 import React from 'react'
 import {checkAgeAC, homeWorkReducer, sortAC} from '../homeWorkReducer'
-
 import {UserType} from "../../HW8";
 
 let initialState: UserType[] // need to fix any
@@ -22,7 +21,6 @@ test('sort name up', () => {
     expect(newState[0].name).toBe('Александр')
     expect(newState[0].age).toBe(66)
     expect(newState[1].name).toBe('Виктор')
-    // expect(...).toBe(...)
 })
 test('sort name down', () => {
     const newState = homeWorkReducer(initialState, sortAC('down'))
@@ -31,7 +29,6 @@ test('sort name down', () => {
     expect(newState[0].name).toBe('Кот')
     expect(newState[5].age).toBe(66)
     expect(newState[5].name).toBe('Александр')
-
 })
 test('check age 18', () => {
     const newState18 = homeWorkReducer(initialState, checkAgeAC(18))
@@ -39,6 +36,4 @@ test('check age 18', () => {
 
     expect(newState18.length).toBe(4)
     expect(newState45.length).toBe(2)
-
-
 })
