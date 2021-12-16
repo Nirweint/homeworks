@@ -26,8 +26,8 @@ function Clock() {
             setShow(false)
     }
 
-    const stringTime = date?.toLocaleTimeString()// fix with date
-    const stringDate = date?.toLocaleDateString() // fix with date
+    const stringTime = date && date.toLocaleTimeString()// fix with date
+    const stringDate = date && date.toLocaleDateString() // fix with date
 
     return (
         <div className={s.clock}>
