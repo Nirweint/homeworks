@@ -1,41 +1,36 @@
-import React, {ChangeEvent, DetailedHTMLProps, InputHTMLAttributes} from 'react'
+import React from 'react'
 import s from './SuperRange.module.css'
+import {Box, Slider} from "@mui/material";
 
-// тип пропсов обычного инпута
-type DefaultInputPropsType = DetailedHTMLProps<InputHTMLAttributes<HTMLInputElement>, HTMLInputElement>
-
-// здесь мы говорим что у нашего инпута будут такие же пропсы как у обычного инпута
-// (чтоб не писать value: string, onChange: ...; они уже все описаны в DefaultInputPropsType)
-type SuperRangePropsType = DefaultInputPropsType & { // и + ещё пропсы которых нет в стандартном инпуте
+type SuperRangePropsType = {
     onChangeRange?: (value: number) => void
+    value: number
+    disabled?: boolean
+    min?: number
+    max?: number
+    step?: number
 };
 
 const SuperRange: React.FC<SuperRangePropsType> = (
-    {
-        type, // достаём и игнорируем чтоб нельзя было задать другой тип инпута
-        onChange, onChangeRange,
-        className,
-
-        ...restProps// все остальные пропсы попадут в объект restProps
+    {value, onChangeRange,
+        ...restProps
     }
 ) => {
-    const onChangeCallback = (e: ChangeEvent<HTMLInputElement>) => {
-        onChange && onChange(e) // сохраняем старую функциональность
 
-        onChangeRange && onChangeRange(+e.currentTarget.value)
+    const onChangeCallback = (event: Event, newValue: number | number[]) => {
+        onChangeRange && onChangeRange(newValue as number)
     }
-
-    const finalRangeClassName = `${s.range} ${className ? className : ''}`
 
     return (
         <>
-            <input
-                type={'range'}
-                onChange={onChangeCallback}
-                className={finalRangeClassName}
-
-                {...restProps} // отдаём инпуту остальные пропсы если они есть (value например там внутри)
-            />
+            <Box sx={{width: 200}}>
+                <Slider
+                    className={s.slider}
+                    value={value}
+                    onChange={onChangeCallback}
+                    {...restProps}
+                />
+            </Box>
         </>
     )
 }
